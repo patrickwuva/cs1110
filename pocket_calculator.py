@@ -89,6 +89,10 @@ def step(o, n):
 
 
 def repeat():
+    '''
+
+    :return: the current value by calling the step function
+    '''
     global recent_number
     global recent_operation
     return step(recent_operation, recent_number)
@@ -107,11 +111,7 @@ def get_expr():
         return operation_output
     else:
 
-        '''this is the final get_expr output. first adding all the ('s at the beginning of the expression by counting 
-        all the iterations of )'s in the string then multiplying that number times ( Then we have to squeeze a ) 
-        in between the first number and the first operator. For this we find the first ) and subtract -2 to get right 
-        behind the first number with is info we use some string slicing to split the string put a ) in and then use 
-        string slicing again for everything after the newly added ) '''
+    #returning the operation output with the correct amount of parenthesis
         return ('('*operation_output.count(')'))+operation_output[:(operation_output.find(')')-2)]+")"\
                +operation_output[operation_output.find(')')-2:len(operation_output)-1]
 
