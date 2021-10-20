@@ -1,23 +1,26 @@
-import pocket_calculator as calc
-print("Example 1:")
-print(calc.get_expr()) # Note that the initial expression will always simply be "0", and no parentheses are required until an operation step() is performed
-print(calc.get_value())
-print("\nExample 2:")
-step_1 = calc.step("+", 3)
-print(calc.get_expr(), "=", step_1)
-step_2 = calc.step("-", 1)
-print(calc.get_expr(), "=", step_2)
-step_3 = calc.step("//", 2)
-print(calc.get_expr(), "=", step_3)
-step_4 = calc.repeat()
-print(calc.get_expr(), "=", step_4)
-print(calc.clear())
-print(calc.get_expr())
-print("\nExample 3:")
-print(calc.clear(10))
-print(calc.step("*", 2))
-print(calc.step("+", 1))
-print(calc.repeat())
-print(calc.repeat())
-print(calc.get_expr())
-
+import movies
+# for testing helper functions
+ironman_movie = ["Iron Man 3", 1.214, 2013, 7.0, 325]
+print(movies.get_name(ironman_movie))
+print(movies.get_gross(ironman_movie))
+print(movies.get_rating(ironman_movie))
+print(movies.get_num_ratings(ironman_movie))
+print()
+# for testing better_movies and averages
+movies_lst = [
+# name, gross from box office, year, rating, num_reviews
+["Avengers: Endgame", 2.797, 2019, 8.2, 532],
+["Avengers: Infinity War", 2.048, 2018, 7.6, 474],
+["The Avengers", 1.518, 2012, 8.0, 358],
+["Avengers: Age of Ultron", 1.405, 2015, 6.8, 370],
+["Black Panther", 1.346, 2018, 8.3, 515],
+["Incredibles 2", 1.242, 2018, 7.84, 379],
+["Iron Man 3", 1.214, 2013, 7.0, 325]
+]
+result = movies.better_movies("Iron Man 3", movies_lst)
+for movie in result:
+    print(movie)
+print()
+print(movies.average("rating", movies_lst))
+print(movies.average("gross", movies_lst))
+print(movies.average("number of ratings", movies_lst))
