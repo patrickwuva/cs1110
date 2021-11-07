@@ -45,6 +45,10 @@ def mean_by_row(table):
 
 
 def mean_by_col(table):
+    """
+    :param table: given the table
+    :return: we want to return the mean of the numbers by the row
+    """
     average_list = []
 
     # get the average by column
