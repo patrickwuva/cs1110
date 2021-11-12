@@ -89,7 +89,7 @@ def remove_bad_states(college):
 
     # a for loop that checks to see if there is a state winner that is not in the college dictionary
     for key in list(states_winner):
-        if college.get(value[j]) is None:
+        if college.get(value[i]) is None:
 
             # removing that state from the winner states dictionary
             del states_winner[key]
